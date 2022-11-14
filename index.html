@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Contraseñas</title>
+    <link rel="stylesheet" href="./font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./font-awesome/js/all.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <style></style>
+  </head>
+
+  <body class="">
+    <main>
+      <div class="col-lg-12">
+        <h1 class="fw-bolder text-center" id="project-title">PROYECTO 9°</h1>
+      </div>
+      <div class="clear-fix my-5"></div>
+      <div class="container w-100">
+        <div class="card rounded-0 shadow bg-black text-light">
+          <div class="card-body">
+            <div class="col-lg-12">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12 col-sm 12">
+                  <h1 class="text-center">SUPER GENERADOR DE CONTRASEÑAS</h1>
+                  <div class="clear-fix py-3"></div>
+                  <!-- Campo de contraseña generado -->
+                  <div class="form-group">
+                    <div class="input-group input-lg" id="password-input">
+                      <input
+                        type="text"
+                        id="generated-password"
+                        class="form-control form-control-dark form-control-lg rounded bg-dark border-light border-right-0 text-light"
+                        placeholder="La contraseña generada se mostrará aquí"
+                        readonly
+                      />
+                      <!-- Copiar al campo del botón Portapapeles -->
+                      <button
+                        class="btn btn-outline-light bg-dark text-light"
+                        type="button"
+                        id="copy_to_clipboard"
+                      >
+                        <i class="fa fa-copy"></i>
+                      </button>
+                      <!-- Fin del campo del botón Copiar al portapapeles -->
+                    </div>
+                  </div>
+                  <!-- Fin del campo de contraseña generado -->
+                  <div class="my-3" id="msg"></div>
+                  <!-- Campo de formulario de generación de contraseña -->
+                  <form id="generate-form" action="">
+                    <!-- Entrada de longitud de contraseña -->
+                    <div class="row mb-3">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <label for="password_length" class="form-label"
+                            >Longitud de la contraseña</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control bg-dark text-light w-auto text-center"
+                            name="password_length"
+                            min="8"
+                            max="30"
+                            value="8"
+                            id="password_length"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Fin de la entrada de la longitud de la contraseña -->
+                    <!-- Casillas de verificación del tipo de caracteres de la contraseña -->
+                    <div class="row mb-3">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="d-flex w-100 align-items-center">
+                          <div class="col-auto">
+                            <input
+                              type="checkbox"
+                              class="btn-check"
+                              id="upperCharacters"
+                              autocomplete="off"
+                              checked
+                            />
+                            <label
+                              class="btn btn-outline-info btn-sm text-dark"
+                              for="upperCharacters"
+                              ><i class="fa fa-check"></i></label
+                            ><br />
+                          </div>
+                          <div class="col-auto flex-shrink-1 flex-grow-1 px-3">
+                            <label for="upperCharacters"
+                              >Caracteres en mayúsculas [A-Z]</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="d-flex w-100 align-items-center">
+                          <div class="col-auto">
+                            <input
+                              type="checkbox"
+                              class="btn-check"
+                              id="lowerCharacters"
+                              autocomplete="off"
+                              checked
+                            />
+                            <label
+                              class="btn btn-outline-info btn-sm text-dark"
+                              for="lowerCharacters"
+                              ><i class="fa fa-check"></i></label
+                            ><br />
+                          </div>
+                          <div class="col-auto flex-shrink-1 flex-grow-1 px-3">
+                            <label for="lowerCharacters"
+                              >Caracteres en minúsculas [a-z]</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="d-flex w-100 align-items-center">
+                          <div class="col-auto">
+                            <input
+                              type="checkbox"
+                              class="btn-check"
+                              id="numericCharacters"
+                              autocomplete="off"
+                            />
+                            <label
+                              class="btn btn-outline-info btn-sm text-dark"
+                              for="numericCharacters"
+                              ><i class="fa fa-check"></i></label
+                            ><br />
+                          </div>
+                          <div class="col-auto flex-shrink-1 flex-grow-1 px-3">
+                            <label for="numericCharacters"
+                              >Caracteres numéricos [0-9]</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mb-5">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="d-flex w-100 align-items-center">
+                          <div class="col-auto">
+                            <input
+                              type="checkbox"
+                              class="btn-check"
+                              id="specialCharacters"
+                              autocomplete="off"
+                            />
+                            <label
+                              class="btn btn-outline-info btn-sm text-dark"
+                              for="specialCharacters"
+                              ><i class="fa fa-check"></i></label
+                            ><br />
+                          </div>
+                          <div class="col-auto flex-shrink-1 flex-grow-1 px-3">
+                            <label for="specialCharacters"
+                              >Caracteres especiales
+                              [%$*{}[]()^#@!+-.?:_]</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Fin de las casillas de verificación del tipo de caracteres de la contraseña -->
+                    <div class="row mb-3">
+                      <center>
+                        <button
+                          class="btn btn-lg rounded-pill w-50 btn-outline-info"
+                        >
+                          Generar contraseña aleatoria
+                        </button>
+                      </center>
+                    </div>
+                  </form>
+                  <!-- Fin del campo de formulario de generación de contraseña-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
